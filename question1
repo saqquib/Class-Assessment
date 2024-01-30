@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+    int arr[50], n, nonZero = 0;
+    cout<<"Enter the size of array: ";
+    cin>>n;
+    cout<<"Input the numbers: ";
+    for(int i = 0; i < n ; i++)
+        cin>>arr[i];
+    //moving all the non-zero elements at the left side
+    for(int i = 0; i < n; i++){
+        if(arr[i] != 0){
+            arr[nonZero] = arr[i];
+            nonZero++;
+        }
+    }
+    //putting all the zeros at the last of array
+    for(int i = nonZero; i < n; i++)
+        arr[i] = 0;
+     
+    //printing the modified array
+    cout<<"\nArray after moving all the zero at the end: ";
+    for(int i = 0; i < n; i++)
+        cout<<arr[i]<<" ";
+    return 0;
+}
